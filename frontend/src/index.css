@@ -1,0 +1,25 @@
+.full-stack-top-banner{
+  height:60vh;
+  background: linear-gradient(to right,#0000007c,#0000007b),url(../public/img/frontend-development.jpg);
+}
+.geekz-language{
+    width:90%;
+    margin: auto;
+    padding:10px 5px;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
+.geekz-language .html-logo{
+   width:50%;
+   display: flex;
+   justify-content: center;
+}
+.geekz-language .html-details{
+   width:50%;
+}
+.geekz-language .courses-logo{
+   height:320px;
+}
+.html-language .html-structure{
+   display: flex;
+   justify-content: center;
+}
