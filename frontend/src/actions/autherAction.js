@@ -4,7 +4,7 @@ import { RegisterFaild, RegisterReuest, RegisterSuccess, loadUserFaild, loadUser
 export const RegisterAction = (userData)=> async(dispatch)=>{
     try{
         dispatch(RegisterReuest());
-        const {data} = await axiso.post(`/api/v1/register`,userData);
+        const {data} = await axiso.post(`${import.meta.env.REACT_SERVER_APP_URL}/api/v1/register`,userData);
         dispatch(RegisterSuccess(data))
     }catch(err){
       dispatch(RegisterFaild(err.response.data.message))
@@ -26,7 +26,7 @@ export const RegisterAction = (userData)=> async(dispatch)=>{
 export const LoginAction = (email,password)=> async(dispatch)=>{
     try{
         dispatch(loginReuest());
-        const {data} = await axiso.post(`/api/v1/userlogin`,{email,password});
+        const {data} = await axiso.post(`${import.meta.env.REACT_SERVER_APP_URL}/api/v1/loginuser`,{email,password});
         dispatch(loginSuccess(data))
     }catch(err){
       dispatch(loginFaild(err.response.data.message))
@@ -37,7 +37,7 @@ export const LoginAction = (email,password)=> async(dispatch)=>{
 export const loadUser =  async(dispatch)=>{
     try{
         dispatch(loadUserReuest());
-        const {data} = await axiso.get(`/api/v1/getuser/profile`);
+        const {data} = await axiso.get(`${import.meta.env.REACT_SERVER_APP_URL}/api/v1/getuser/profile`);
         dispatch(loadUserSuccess(data))
     }catch(err){
       dispatch(loadUserFaild(err.response.data.message));

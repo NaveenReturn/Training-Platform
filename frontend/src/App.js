@@ -14,9 +14,9 @@ import Update from './components/Update';
 import Course from './components/Course';
 import CourseRegister from './components/CourseRegister';
 function App() {
-  useEffect(()=>{
-    store.dispatch(loadUser);
-},[]);
+//   useEffect(()=>{
+//     store.dispatch(loadUser);
+// },[]);
   return (
     <div className="App">
        <Header/>
