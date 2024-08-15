@@ -8,7 +8,7 @@ const StudentList = () => {
   useEffect(()=>{
 
      async function getUser(){
-        const {data} = await axios.get(`/api/v1/getsingleuser/${id}`);
+        const {data} = await axios.get(`${import.meta.env.REACT_SERVER_APP_URL}/api/v1/getsingleuser/${id}`);
         setUserdata(data && data.user);
      }
      getUser();

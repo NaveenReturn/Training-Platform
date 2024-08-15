@@ -6,14 +6,14 @@ const Course = () => {
     const [userData,setUserData] = useState([]);
   useEffect(()=>{
     async function getALl(){
-        const {data} =await axios.get(`/api/v1/course/getalluser`);
+        const {data} =await axios.get(`${import.meta.env.REACT_SERVER_APP_URL}/api/v1/course/getalluser`);
         setUserData(data && data.course);
      }
      getALl();
   },[]);
   console.log(userData);
   const DeleteCourse = async(id)=>{
-    const {data} = await axios.delete(`/api/v1/course/deletecourse/${id}`);
+    const {data} = await axios.delete(`${import.meta.env.REACT_SERVER_APP_URL}/api/v1/course/deletecourse/${id}`);
 
     if(data.success){
        navigate("/studenttable");

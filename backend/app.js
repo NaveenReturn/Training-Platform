@@ -10,7 +10,6 @@ require("dotenv").config({path:path.join(__dirname,"/config.env")});
 const database = require("./database");
 const Usersrouter = require("./routers/autherRouter");
 const Course = require("./routers/courseRouter");
-database()
 const corsOptions={
     origin:process.env.APPLICATION_URL,
     methods:"GET,POST,PATCH,PUT,DELETE"
