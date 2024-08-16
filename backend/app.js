@@ -11,7 +11,6 @@ require("dotenv").config({path:path.join(__dirname,"/config.env")});
 const database = require("./database");
 const Usersrouter = require("./routers/autherRouter");
 const Course = require("./routers/courseRouter");
-const { env } = require('../frontend/.eslintrc.cjs');
 const corsOptions={
     origin:process.env.APPLICATION_URL,
     methods:"GET,POST,PATCH,PUT,DELETE"
@@ -20,7 +19,8 @@ app.use(cors(corsOptions))
 
 app.use("/api/v1",Usersrouter);
 app.use("/api/v1/course",Course);
-app.listen(8000,()=>{
-    console.log(`server is start ${process.env.PORT}`)
+const PORT = process.env.PORT || 8000;
+app.listen(PORT,()=>{
+    console.log(`server is start ${PORT}`)
     
  })
